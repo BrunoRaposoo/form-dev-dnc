@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário para devs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Trilha do Desenvolvedor</h2>
+
+    <div class="question" id="question1">
+        <p>Qual área dentro do desenvolvimento web você gostaria de explorar?</p>
+        <button onclick="nextQuestion(2, 'front-end')">Front-end</button>
+        <button onclick="nextQuestion(2, 'back-end')">Back-end</button>
+        <button onclick="nextQuestion(2, 'full-stack')">Full-stack</button>
+    </div>
+
+    <div class="question" id="question2-front-end">
+        <p>Você prefere trabalhar mais com design ou com lógica de programação?</p>
+        <button onclick="nextQuestion(3, 'design')">Design</button>
+        <button onclick="nextQuestion(3, 'logic')">Lógica de programação</button>
+    </div>
+    <div class="question" id="question2-back-end">
+        <p>Qual linguagem de programação você está mais interessado em aprender?</p>
+        <button onclick="nextQuestion(3, 'nodejs')">JavaScript (Node.js)</button>
+        <button onclick="nextQuestion(3, 'python')">Python (Django/Flask)</button>
+        <button onclick="nextQuestion(3, 'php')">PHP</button>
+    </div>
+    <div class="question" id="question2-full-stack">
+        <p>Qual é o seu nível de experiência em desenvolvimento web?</p>
+        <button onclick="nextQuestion(3, 'beginner')">Iniciante</button>
+        <button onclick="nextQuestion(3, 'intermediate')">Intermediário</button>
+        <button onclick="nextQuestion(3, 'advanced')">Avançado</button>
+    </div>
+
+    <div class="question" id="question3-design">
+        <p>Você gostaria de se aprofundar em alguma das seguintes áreas?</p>
+        <button onclick="nextQuestion(4, 'ui-ux')">UI/UX Design</button>
+        <button onclick="nextQuestion(4, 'animations')">Animações e Interações</button>
+        <button onclick="nextQuestion(4, 'tools')">Ferramentas de Design</button>
+    </div>
+    <div class="question" id="question3-logic">
+        <p>Qual framework front-end você gostaria de aprender?</p>
+        <button onclick="nextQuestion(4, 'react')">React</button>
+        <button onclick="nextQuestion(4, 'angular')">Angular</button>
+        <button onclick="nextQuestion(4, 'vue')">Vue.js</button>
+    </div>
+    <div class="question" id="question3-nodejs">
+        <p>Você está interessado em aprender sobre:</p>
+        <button onclick="nextQuestion(4, 'api')">Construção de APIs</button>
+        <button onclick="nextQuestion(4, 'db')">Gerenciamento de Banco de Dados</button>
+        <button onclick="nextQuestion(4, 'security')">Segurança e Autenticação</button>
+    </div>
+    <div class="question" id="question3-beginner">
+        <p>Você gostaria de começar com:</p>
+        <button onclick="nextQuestion(4, 'html-css')">HTML/CSS</button>
+        <button onclick="nextQuestion(4, 'js-basics')">JavaScript básico</button>
+        <button onclick="nextQuestion(4, 'web-basics')">Conceitos básicos de Web</button>
+    </div>
+    <div class="question" id="question3-intermediate">
+      <p>Você gostaria de aprimorar suas habilidades em:</p>
+      <button onclick="nextQuestion(4, 'responsive-layout')">Responsividade e Layout</button>
+      <button onclick="nextQuestion(4, 'build-tools')">Ferramentas de Build (Webpack, Babel)</button>
+      <button onclick="nextQuestion(4, 'testing-debugging')">Testes e Debugging</button>
+    </div>
+    <div class="question" id="question3-advanced">
+        <p>Você gostaria de se especializar em:</p>
+        <button onclick="nextQuestion(4, 'performance')">Performance e Otimização</button>
+        <button onclick="nextQuestion(4, 'fullstack-development')">Desenvolvimento Full-Stack</button>
+        <button onclick="nextQuestion(4, 'security-best-practices')">Segurança e Boas Práticas</button>
+    </div>
+
+    <div class="question" id="question4-react">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('Hooks e State Management')">Hooks e State Management</button>
+      <button onclick="showResult('Desenvolvimento de Componentes')">Desenvolvimento de Componentes</button>
+      <button onclick="showResult('Integração com APIs')">Integração com APIs</button>
+  </div>
+  <div class="question" id="question4-api">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('RESTful APIs')">RESTful APIs</button>
+      <button onclick="showResult('GraphQL')">GraphQL</button>
+      <button onclick="showResult('API Versioning')">API Versioning</button>
+  </div>
+  <div class="question" id="question4-html-css">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('Flexbox e Grid Layout')">Flexbox e Grid Layout</button>
+      <button onclick="showResult('Animações com CSS')">Animações com CSS</button>
+      <button onclick="showResult('Acessibilidade e Semântica')">Acessibilidade e Semântica</button>
+  </div>
+  <div class="question" id="question4-responsive-layout">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('Flexbox e Grid Layout')">Flexbox e Grid Layout</button>
+      <button onclick="showResult('Mobile First Design')">Mobile First Design</button>
+      <button onclick="showResult('Media Queries')">Media Queries</button>
+  </div>
+  <div class="question" id="question4-build-tools">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('Webpack')">Webpack</button>
+      <button onclick="showResult('Babel')">Babel</button>
+      <button onclick="showResult('NPM/Yarn Scripts')">NPM/Yarn Scripts</button>
+  </div>
+  <div class="question" id="question4-testing-debugging">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('Testes Unitários')">Testes Unitários</button>
+      <button onclick="showResult('Debugging no Navegador')">Debugging no Navegador</button>
+      <button onclick="showResult('Testes de Integração')">Testes de Integração</button>
+  </div>
+  <div class="question" id="question4-performance">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('Optimização de Performance')">Optimização de Performance</button>
+      <button onclick="showResult('Lazy Loading')">Lazy Loading</button>
+      <button onclick="showResult('Minificação de Arquivos')">Minificação de Arquivos</button>
+  </div>
+  <div class="question" id="question4-fullstack-development">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('Desenvolvimento com MERN Stack')">Desenvolvimento com MERN Stack</button>
+      <button onclick="showResult('Desenvolvimento com LAMP Stack')">Desenvolvimento com LAMP Stack</button>
+      <button onclick="showResult('Desenvolvimento com MEAN Stack')">Desenvolvimento com MEAN Stack</button>
+  </div>
+  <div class="question" id="question4-security-best-practices">
+      <p>Você gostaria de aprender sobre:</p>
+      <button onclick="showResult('Autenticação e Autorização Segura')">Autenticação e Autorização Segura</button>
+      <button onclick="showResult('Criptografia de Dados')">Criptografia de Dados</button>
+      <button onclick="showResult('Segurança em APIs')">Segurança em APIs</button>
+  </div>
+  
+    <div class="question" id="result">
+        <p>Obrigado por responder! Com base nas suas escolhas, sugerimos focar em: <span id="final-result"></span>.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
